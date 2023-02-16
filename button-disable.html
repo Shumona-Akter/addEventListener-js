@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button disable</title>
+</head>
+<body>
+    <div>
+        <input id="txet" type="text" placeholder="type email">
+        <button id="delete-btn" disabled>update</button>
+    </div>
+    <h1 id="remove-text">LET'S STAY IN TOUCH</h1>
+
+    <script>
+        document.getElementById('txet').addEventListener("keyup", function(){
+            const txetInput = document.getElementById('txet');
+            const inputValue = txetInput.value;
+
+            const disableBtn = document.getElementById('delete-btn')
+            
+            if(inputValue === 'email'){
+                disableBtn.removeAttribute('disabled')
+            }
+            else{
+                disableBtn.setAttribute('disabled', true)
+            }
+        })
+
+      
+        document.getElementById('delete-btn').addEventListener('dblclick', function(){
+            const remove = document.getElementById('remove-text')
+            remove.style.backgroundColor  = 'green'
+        })
+          // document.getElementById('delete-btn').addEventListener('click', function(){
+        //     const remove = document.getElementById('remove-text')
+        //     remove.style.display  = 'none'
+        // })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse enter</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section id="img">
+        <img id="mouse-enter" src="img/1.jpeg" alt="">
+    </section>
+    <script>
+        document.getElementById('img').addEventListener('mouseenter', function(){
+            const cngimg = document.getElementById('mouse-enter');
+            cngimg.src = "img/2.jpeg"
+        })
+    </script>
+</body>
+</html>

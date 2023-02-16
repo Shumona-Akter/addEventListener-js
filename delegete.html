@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delegete</title>
+</head>
+<body>
+    <!-- delegete delete kkore mane gayb -->
+
+    <h1>gayebul hoa delete element delegate</h1>
+    <section id="container">
+        <ul id="list-conainer">
+            <li class="item">Lorem ipsum dolor sit amet.</li>
+            <li class="item">Maxime minus deserunt molestias maiores!</li>
+            <li class="item">Cupiditate eum eius sequi. Repellat.</li>
+            <li class="item">Saepe aliquam voluptatem et deleniti.</li>
+            <li class="item">Veniam hic excepturi deleniti expedita.</li>
+            <li class="item">Magnam hic nisi temporibus ullam.</li>
+        </ul>
+    </section>
+    <button id="add-btn">add</button>
+
+
+    <script>
+        const items = document.getElementsByClassName('item')
+        for(const item of items){
+            item.addEventListener('click', function(event){
+               event.target.parentNode.removeChild(event.target)
+            })
+        }
+
+        // parent chiild k dhore
+       document.getElementById('container').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target)
+       })
+      
+        document.getElementById('add-btn').addEventListener('click', function(){
+            const container = document.getElementById('list-conainer');
+            console.log(container)
+            const li = document.createElement("li");
+            li.innerHTML = "hello";
+            li.classList.add('item');
+
+            console.log(li)
+            container.appendChild(li)
+        })
+    </script>
+</body>
+</html>
